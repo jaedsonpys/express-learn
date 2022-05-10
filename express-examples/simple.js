@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Hello World! Welcome to home page')
+    res.send('Hello World!')
 })
 
-// add more methods here...
+app.post('/send', (req, res) => {
+    var data = req.body
+    res.send(`You send: ${data}`)
+})
